@@ -55,8 +55,9 @@ export default class GameControl {
     try {
       this.snake.snakeHeadX = X
       this.snake.snakeHeadY = Y
-    } catch(e) {
-      alert('game over')
+    } catch(err) {
+      console.log(err)
+      alert(`${err}, GAME OVER!!!`)
       this.isLive = false
     }
     this.isLive && setTimeout(this.move.bind(this), 200)
